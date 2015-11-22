@@ -1,0 +1,12 @@
+services:
+    tas2580.pgpmail.listener:
+        class: tas2580\pgpmail\event\listener
+        arguments:
+            - @user
+            - @template
+            - @request
+            - %core.root_path%
+            - %core.php_ext%
+            - @ext.manager
+        tags:
+            - { name: event.listener }
